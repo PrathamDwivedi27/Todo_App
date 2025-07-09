@@ -6,14 +6,30 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 const TabsLayout = () => {
   return (
     <Tabs
-      screenOptions={{}}
+      screenOptions={{
+        tabBarActiveTintColor: '#e91e63',
+        tabBarInactiveTintColor: '#000',
+        tabBarStyle:{
+            backgroundColor: '#1e293b',
+            borderTopWidth: 1,
+            borderTopColor: '#ccc',
+            height: 110,
+            paddingBottom: 30,
+            paddingTop: 10,
+        },
+        tabBarLabelStyle: {
+            fontSize: 12,
+            fontWeight: '600',
+        },
+        headerShown: false,
+      }}
     >
         <Tabs.Screen
             name='index'
             options={{
                 title: "Todos",
                 tabBarIcon: ({color,size})=>(
-                    <Ionicons name='flash-outline' size={size}/>
+                    <Ionicons name='flash-outline' size={size} color={color}/>
                 )
             }}
         />
@@ -23,7 +39,7 @@ const TabsLayout = () => {
             options={{
                 title: "Settings",
                 tabBarIcon: ({color,size})=>(
-                    <Ionicons name='settings' size={size}/>
+                    <Ionicons name='settings' size={size} color={color}/>
                 )
             }}
         />
